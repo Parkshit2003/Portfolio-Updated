@@ -1,31 +1,36 @@
-import { useState } from 'react';
-import { Portfolio_backend } from 'declarations/Portfolio_backend';
+import React from 'react';
+import Navbar from './components/navbar';
+import Home from './components/Home';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import './index.css';
 
-function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    Portfolio_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
-
-  return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
-  );
+const App = () => {
+    return (
+        <div>
+            <Navbar/>
+            <div className="container mx-auto p-4 bg-custom-dark w-100">
+                <section id="home">
+                    <Home />
+                </section>
+                <section id="about">
+                    <About />
+                </section>
+                <section id="projects">
+                    <Projects />
+                </section>
+                <section id="contact">
+                    <Contact />
+                </section>
+            </div>
+            <footer className="bg-gray-800 text-center py-4 text-gray-300">
+                Developed By Parkshit &copy; {new Date().getFullYear()}
+            </footer>
+        </div>
+    );
 }
 
 export default App;
+
+

@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* index.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #051129; 
+} 
+
+
+
+ .position-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+} 
+
+.container {
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+.typing {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid transparent; 
+    animation: typing 4s steps(21, end) infinite; 
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    25% {
+        width: 100%;
+    }
+    50% {
+        width: 100%;
+        border-right-color: currentColor; /* Cursor appears at the end */
+    }
+    75% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+        border-right-color: transparent; /* Cursor disappears */
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: currentColor;
+    }
+}
+.project-card {
+    
+    width: 100%;
+    border-radius: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
